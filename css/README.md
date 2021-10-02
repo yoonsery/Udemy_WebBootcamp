@@ -16,3 +16,34 @@ if we specify CSS rules for the same property in different places which one is m
 
 - `@media <type> <feature>`
 - `@media statement` it evaluate whether it's true or false, if it is true then inside of code will get carried out
+
+## code refactoring
+
+1. Readability
+2. Modularity
+3. Efficiency
+4. Length
+
+### Pick & Mix Selectors
+
+- Multiple Selectors
+
+```css
+selector1,
+selector2 {
+}
+```
+
+- Hierarchical Selectors
+
+```css
+selector1 .selector2 {
+}
+```
+
+- Combined Selectors
+
+```css
+selector1.selector2 {
+}
+```
