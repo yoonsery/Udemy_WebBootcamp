@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/index.html`);
 });
 
-app.post('/', (req, res) => {
+app.post('/result', (req, res) => {
   const num1 = Number(req.body.num1);
   const num2 = Number(req.body.num2);
 
