@@ -14,12 +14,16 @@ app.get('/', (req, res) => {
       const weatherData = JSON.parse(data);
       const temp = weatherData.main.temp;
       const weatherDescription = weatherData.weather[0].description;
-      console.log(temp);
-      console.log(weatherDescription);
+      const icon = weatherData.weather[0].icon;
+      const imageURL = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+
+      res.set({ 'Content-Type': 'text/html; charset=utf-8' }); // Can use special characters 💃🏻
+      res.write(`<h1>The temperature in London is ${temp}℃ </h1>`);
+      res.write(`<p>The weather is currently ${weatherDescription}</p>`);
+      res.write(`<img src="${imageURL}" >`);
+      res.send();
     });
   });
-
-  res.send('Server is up and running');
 });
 
 app.listen(3000, () => {
