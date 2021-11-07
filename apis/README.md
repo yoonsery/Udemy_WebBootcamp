@@ -26,3 +26,8 @@ Also it's very easy to turn back into a javascript object
 - `300 ~ 399` : Redirects
 - `400 ~ 499` : Client errors
 - `500 ~ 599` : Server errors
+
+## Note
+
+1. To use special characters add 👇🏻 code ([link](https://github.com/yoonsery/udemy-bootcamp/commit/08b221f0b09ec41489498047642ceee098a3b770))  
+   `res.set({ 'Content-Type': 'text/html; charset=utf-8' });`
