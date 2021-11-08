@@ -31,3 +31,5 @@ Also it's very easy to turn back into a javascript object
 
 1. To use special characters add 👇🏻 code ([link](https://github.com/yoonsery/udemy-bootcamp/commit/08b221f0b09ec41489498047642ceee098a3b770))  
    `res.set({ 'Content-Type': 'text/html; charset=utf-8' });`
+
+2. To hide API Key for security reason, install & use `dotenv`
