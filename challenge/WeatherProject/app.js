@@ -1,11 +1,22 @@
 const express = require('express');
 const https = require('https');
+const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
 
 const app = express();
 
+dotenv.config();
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.get('/', (req, res) => {
-  const url =
-    'https://api.openweathermap.org/data/2.5/weather?q=London&appid=727882c6eaab040ebe0ae213b5b5fcaf&units=metric';
+  res.sendFile(`${__dirname}/index.html`);
+});
+
+app.post('/', (req, res) => {
+  const query = req.body.cityName;
+  const apiKey = process.env.WEATHER_API_KEY;
+  const units = 'metric';
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${apiKey}&units=${units}`;
 
   https.get(url, (response) => {
     console.log('statusCode:', response.statusCode);
@@ -18,7 +29,7 @@ app.get('/', (req, res) => {
       const imageURL = `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
       res.set({ 'Content-Type': 'text/html; charset=utf-8' }); // Can use special characters 💃🏻
-      res.write(`<h1>The temperature in London is ${temp}℃ </h1>`);
+      res.write(`<h1>The temperature in ${query} is ${temp}℃ </h1>`);
       res.write(`<p>The weather is currently ${weatherDescription}</p>`);
       res.write(`<img src="${imageURL}" >`);
       res.send();
