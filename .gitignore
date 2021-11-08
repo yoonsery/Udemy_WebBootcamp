@@ -1,5 +1,6 @@
 /
 .history/
 .vscode/
+.env
 
 node_modules/
