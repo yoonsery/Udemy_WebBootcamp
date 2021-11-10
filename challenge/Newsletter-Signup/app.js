@@ -42,12 +42,14 @@ app.post('/', (req, res) => {
       },
     });
 
-    console.log(
-      `Successfully added contact as an audience member. The contact's id is ${response.id}.`
-    );
+    res.sendFile(`${__dirname}/success.html`);
   }
 
-  run();
+  run().catch((e) => res.sendFile(`${__dirname}/failure.html`));
+});
+
+app.post('/failure', (req, res) => {
+  res.redirect('/');
 });
 
 app.listen(3000, () => {

@@ -3,8 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="https://img.icons8.com/material-outlined/24/000000/musical-notes.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>failure 🤦🏻‍♀️</title>
   </head>
-  <body></body>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Uh oh!</h1>
+        <p class="lead">
+          There was a problem signing you up. Please try again or contact the
+          developer!
+        </p>
+        <form action="/failure" method="post">
+          <button class="btn btn-lg btn-warning" type="submit">
+            Try Again
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
