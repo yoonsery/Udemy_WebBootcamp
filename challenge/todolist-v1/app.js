@@ -2,20 +2,29 @@ const express = require('express');
 
 const app = express();
 
+app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const day = {
+  0: 'Sunday',
+  1: 'Monday',
+  2: 'Tuesday',
+  3: 'Wednesday',
+  4: 'Thursday',
+  5: 'Friday',
+  6: 'Saturday',
+};
+
 app.get('/', (req, res) => {
-  const today = new Date();
-  if (today.getDay() === 6 || today.getDay() === 0) {
-    res.send(`Yeah! It's a weekend`);
-  } else if (today.getDay() === 5) {
-    res.write(`<h1>It's Friday night!</h1>`);
-    res.write(`<p>And Saturday, Sunday WHAT?!</p>`);
-    res.send();
-  } else {
-    res.send(`Nah...`);
-  }
+  let today = day[new Date().getDay()];
+
+  // if (today === 'Saturday' || today === 'Sunday') {
+  //   today = 'Weekend';
+  // } else {
+  //   today = 'Weekday';
+  // }
+  res.render('list', { kindOfDay: today });
 });
 
 app.listen(3000, () => {
