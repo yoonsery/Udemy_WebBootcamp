@@ -1,30 +1,28 @@
 const express = require('express');
 
 const app = express();
+const items = ['Buy Groceries', 'Cook meals', 'Eat Food'];
 
 app.set('view engine', 'ejs');
-app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const day = {
-  0: 'Sunday',
-  1: 'Monday',
-  2: 'Tuesday',
-  3: 'Wednesday',
-  4: 'Thursday',
-  5: 'Friday',
-  6: 'Saturday',
-};
-
 app.get('/', (req, res) => {
-  let today = day[new Date().getDay()];
+  const today = new Date();
+  const options = {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+  };
+  const day = today.toLocaleDateString('en-US', options);
+  console.log(day);
 
-  // if (today === 'Saturday' || today === 'Sunday') {
-  //   today = 'Weekend';
-  // } else {
-  //   today = 'Weekday';
-  // }
-  res.render('list', { kindOfDay: today });
+  res.render('list', { kindOfDay: day, newListItems: items });
+});
+
+app.post('/', (req, res) => {
+  const item = req.body.newItem;
+  items.push(item);
+  res.redirect('/');
 });
 
 app.listen(3000, () => {

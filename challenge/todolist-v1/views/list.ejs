@@ -5,12 +5,15 @@
     <title>To Do List</title>
   </head>
   <body>
-    <!-- try to do all of logic inside server! -->
-    <% if (kindOfDay === "Monday") { %>
-    <h1 style="color: green">It's a <%= kindOfDay %> List</h1>
-    <% } else { %>
-    <h1 style="color: rosybrown">It's a <%= kindOfDay %> List</h1>
-    <% } %>
-    <p>Are you working? 🤨</p>
+    <h1><%= kindOfDay %></h1>
+    <ul>
+      <% for(let i = 0; i < newListItems.length; i++) { %>
+      <li><%= newListItems[i] %></li>
+      <% } %>
+    </ul>
+    <form class="" action="/" method="post">
+      <input type="text" name="newItem" />
+      <button type="submit">Add</button>
+    </form>
   </body>
 </html>
