@@ -1,7 +1,8 @@
 const express = require('express');
 
 const app = express();
-const items = ['Buy Groceries', 'Cook meals', 'Eat Food'];
+let items = ['Buy Groceries', 'Cook meals', 'Eat Food'];
+let workItems = [];
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
@@ -17,13 +18,27 @@ app.get('/', (req, res) => {
   const day = today.toLocaleDateString('en-US', options);
   console.log(day);
 
-  res.render('list', { kindOfDay: day, newListItems: items });
+  res.render('list', { listTitle: day, newListItems: items });
 });
 
 app.post('/', (req, res) => {
-  const item = req.body.newItem;
-  items.push(item);
-  res.redirect('/');
+  let item = req.body.newItem;
+
+  if (item.trim() === '') {
+    return;
+  }
+
+  if (req.body.list === 'Work List') {
+    workItems.push(item);
+    res.redirect('/work');
+  } else {
+    items.push(item);
+    res.redirect('/');
+  }
+});
+
+app.get('/work', (req, res) => {
+  res.render('list', { listTitle: 'Work List', newListItems: workItems });
 });
 
 app.listen(3000, () => {
