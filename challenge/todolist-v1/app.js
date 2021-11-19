@@ -2,20 +2,20 @@ const express = require('express');
 const date = require(`${__dirname}/date.js`);
 
 const app = express();
-let items = ['Buy Groceries', 'Cook meals', 'Eat Food'];
-let workItems = [];
+const items = ['Buy Groceries', 'Cook meals', 'Eat Food'];
+const workItems = [];
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-  const day = date();
+  const day = date.getDate();
   res.render('list', { listTitle: day, newListItems: items });
 });
 
 app.post('/', (req, res) => {
-  let item = req.body.newItem;
+  const item = req.body.newItem;
 
   if (item.trim() === '') {
     return;
