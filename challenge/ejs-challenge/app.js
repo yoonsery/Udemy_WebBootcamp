@@ -18,7 +18,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
+const posts = [];
+
 app.get('/', (req, res) => {
+  console.log(posts);
   res.render('home', { homeContent: homeStartingContent });
 });
 
@@ -40,7 +43,9 @@ app.post('/compose', (req, res) => {
     content: req.body.postBody,
   };
 
-  console.log(post);
+  posts.push(post);
+
+  res.redirect('/');
 });
 
 app.listen(3000, function () {
