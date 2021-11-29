@@ -56,7 +56,7 @@ app.get('/posts/:postTitle', (req, res) => {
 
     if (requestedTitle === storedTitle) {
       res.render('post', {
-        title: storedTitle,
+        title: post.title,
         content: post.content,
       });
     }
