@@ -39,3 +39,72 @@ database can be distribute amongst lots and lots of differnt computers
   - More Flexible to Changes
   - Not Great with Complex Relationships
   - Horizontally Scalable
+
+### CRUD
+
+- Create
+- Read
+- Update
+- Destroy
+
+#### CREATE Table and INSERT Data
+
+How to Create Table
+
+```
+CREATE DATABASE products (  // products is table name
+  id INT NOT NULL,
+  name STRING,
+  price MONEY,
+  PRIMARY KEY (id)
+);
+```
+
+How to update the Table  
+The `INSERT INTO` statement is used to insert new records in a table
+
+```
+INSERT INTO products
+VALUES (1, 'Pen', 1.20)    // id, name, price
+```
+
+```
+INSERT INTO products (id, name)
+VALUES (2, 'Pencil')
+```
+
+#### READ, SELECT, and WHERE
+
+```
+SELECT name, price
+FROM products;
+WHERE id = 1  // condition
+```
+
+```
+SELECT * FROM products;
+```
+
+#### UPDATE Single value and ADD Columns
+
+How to Update a Single Value
+
+```
+UPDATE products
+SET price = 0.80
+WHERE id = 2
+```
+
+How to Update by Adding a Column
+
+```
+ALTER TABLE products
+ADD stock INT   // the column name is stock and the data type is integer
+```
+
+#### DELETE
+
+```
+DELETE FROM products
+WHERE id = 2
+```
