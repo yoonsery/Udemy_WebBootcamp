@@ -108,3 +108,35 @@ ADD stock INT   // the column name is stock and the data type is integer
 DELETE FROM products
 WHERE id = 2
 ```
+
+#### SQL Relationships, Foreign Keys and Inner Joins
+
+```
+CREATE TABLE orders (
+  id INT NOT NULL,
+  order_number INT,
+  customer_id INT,
+  product_id INT,
+  PRIMARY KEY (id),
+  FOREIGN KEY (customer_id) REFERENCES customers(id),
+  FOREIGN KEY (product_id) REFERENCES products(id)
+  )
+```
+
+INNER JOIN Syntax
+
+```js
+SELECT column_name(s)   // all the fields that you want to join together in a new table
+FROM table1
+INNER JOIN table2
+ON table1.column_name = table2.column_name;
+```
+
+In my code 👇🏻
+
+```
+SELECT orders.order_number, customers.first_name, customers.last_name, customers.address
+FROM orders
+INNER JOIN customers
+ON orders.customer_id = customers.id
+```
