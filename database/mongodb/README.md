@@ -37,7 +37,8 @@
 
 ### Delete
 
-`db.products.deleteOne({_id: 2})`
+- `db.products.deleteOne({_id: 2})`
+- `db.fruits.deleteMany({ })`
 
 ### Relationships in MongoDB
 
