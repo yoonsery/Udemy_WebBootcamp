@@ -1,0 +1,33 @@
+## MongoDB
+
+[install](https://docs.mongodb.com/v5.0/installation/)
+
+- Cloud: MongoDB Atlas
+- Servers
+- Tools
+
+### [MongoDB CRUD Operations](https://docs.mongodb.com/manual/crud/)
+
+To run MongoDB  
+`brew services start mongodb-community@5.0`
+
+To Stop  
+`brew services stop mongodb-community@5.0`
+
+#### Create
+
+`use <db_name>` : set current database
+
+`db.products.insertOne({_id: 1, name: 'Pen', price: 1.20})`
+
+#### Reading & Queries
+
+`db.products.find()`  
+`db.products.find({name: 'Pen'})` : Can read specific documents inside my collection or inside my database through the use of a specific query
+
+[Query and Projection Operators](https://docs.mongodb.com/manual/reference/operator/query/)
+
+`db.products.find({price: {$gt: 1}})` : find great than 1 at price collection only  
+`db.products.find({_id: 1}, {name: 1, _id: 0})`: find id 1 with name but without id
+
+#### Update
