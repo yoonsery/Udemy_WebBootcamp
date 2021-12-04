@@ -36,7 +36,8 @@ async function run() {
     ];
 
     const result = await fruitsCollection.insertMany(fruits);
-    console.log(result.insertedCount);
+    const resultOfFruits = await fruitsCollection.find();
+    console.log(await resultOfFruits.forEach((item) => console.log(item)));
   } finally {
     await client.close();
   }
