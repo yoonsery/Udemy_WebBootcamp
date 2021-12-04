@@ -38,3 +38,28 @@
 ### Delete
 
 `db.products.deleteOne({_id: 2})`
+
+### Relationships in MongoDB
+
+```
+db.products.insertOne(
+  {
+    _id: 3,
+    name: "Rubber",
+    price: 1.30,
+    stock: 43,
+    reviews: [
+      {
+        authorName: "Sally",
+        rating: 5,
+        review: "Best rubber ever!"
+      },
+      {
+        authorName: "John",
+        rating: 5,
+        review: "Awesome rubber!"
+      }
+    ]
+  }
+)
+```
