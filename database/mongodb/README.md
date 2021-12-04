@@ -63,3 +63,14 @@ db.products.insertOne(
   }
 )
 ```
+
+## MongoDB with Node.js
+
+1. Use MongoDB native driver
+2. Use ODM (Object Document Mapper) that's called mongoose
+
+### How to use MongoDB native driver
+
+[docs](https://docs.mongodb.com/drivers/node/current/quick-start/)
+
+create a project directory ⟶ `npm init` ⟶ `npm i mongodb`
