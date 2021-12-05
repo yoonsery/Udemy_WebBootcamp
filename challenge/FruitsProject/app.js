@@ -1,45 +1,65 @@
-const { MongoClient } = require('mongodb');
+const mongoose = require('mongoose');
 
-const uri = 'mongodb://localhost:27017';
-// const uri =
-// 'mongodb+srv://<user>:<password>@<cluster-url>?retryWrites=true&writeConcern=majority';
+main().catch((err) => console.log(err));
 
-const client = new MongoClient(
-  uri, //
-  { useUnifiedTopology: true }
-);
-
-async function run() {
-  try {
-    await client.connect();
-    console.log('Connected Successfully to server');
-
-    const database = client.db('fruitsDB');
-    const fruitsCollection = database.collection('fruits');
-
-    const fruits = [
-      {
-        name: 'Apple',
-        score: 8,
-        review: 'Great fruit',
-      },
-      {
-        name: 'Orange',
-        score: 6,
-        review: 'Kinda sour',
-      },
-      {
-        name: 'Banana',
-        score: 9,
-        review: 'Great stuff!',
-      },
-    ];
-
-    const result = await fruitsCollection.insertMany(fruits);
-    const resultOfFruits = await fruitsCollection.find();
-    console.log(await resultOfFruits.forEach((item) => console.log(item)));
-  } finally {
-    await client.close();
-  }
+async function main() {
+  await mongoose.connect('mongodb://localhost:27017/fruitsDB');
 }
-run().catch(console.dir);
+
+const fruitSchema = new mongoose.Schema({
+  name: String,
+  rating: Number,
+  review: String,
+});
+
+const Fruit = mongoose.model('fruit', fruitSchema);
+// 1st params: name of the collection and always be string & singular form
+
+const fruit = new Fruit({
+  name: 'Apple',
+  rating: 7,
+  review: 'Delicious!',
+});
+
+const kiwi = new Fruit({
+  name: 'kiwi',
+  rating: 9,
+  review: 'Sweeeeet',
+});
+
+const peach = new Fruit({
+  name: 'peach',
+  rating: 10,
+  review: 'The best fruit',
+});
+
+const hallabong = new Fruit({
+  name: 'hallabong',
+  rating: 10,
+  review: 'Better than mandarin!',
+});
+
+// fruit.save();
+
+Fruit.insertMany([kiwi, peach, hallabong], (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('Succesfully saved all the fruits to fruitsDB');
+  }
+});
+
+// challenge
+
+const personSchema = new mongoose.Schema({
+  name: String,
+  age: Number,
+});
+
+const Person = mongoose.model('person', personSchema);
+const person = new Person({
+  name: 'John',
+  age: 37,
+});
+
+person.save();
