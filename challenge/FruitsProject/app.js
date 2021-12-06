@@ -28,23 +28,23 @@ const fruit = new Fruit({
   review: 'Delicious!',
 });
 
-// const kiwi = new Fruit({
-//   name: 'kiwi',
-//   rating: 9,
-//   review: 'Sweeeeet',
-// });
+const kiwi = new Fruit({
+  name: 'kiwi',
+  rating: 9,
+  review: 'Sweeeeet',
+});
 
-// const peach = new Fruit({
-//   name: 'peach',
-//   rating: 10,
-//   review: 'The best fruit',
-// });
+const peach = new Fruit({
+  name: 'peach',
+  rating: 10,
+  review: 'The best fruit',
+});
 
-// const hallabong = new Fruit({
-//   name: 'hallabong',
-//   rating: 10,
-//   review: 'Better than mandarin!',
-// });
+const hallabong = new Fruit({
+  name: 'hallabong',
+  rating: 10,
+  review: 'Better than mandarin!',
+});
 
 // fruit.save();
 
@@ -56,7 +56,7 @@ const fruit = new Fruit({
 //   }
 // });
 
-// 📌 insert documents to collection1
+// 📌 insert documents to collection
 
 // Fruit.insertMany([kiwi, peach, hallabong], (err) => {
 //   if (err) {
@@ -66,6 +66,8 @@ const fruit = new Fruit({
 //   }
 // });
 
+// 📌 read documents
+
 Fruit.find((err, fruits) => {
   if (err) {
     console.log(err);
@@ -74,7 +76,21 @@ Fruit.find((err, fruits) => {
     // mongoose.connection.close();
 
     fruits.forEach((fruit) => {
-      console.log(fruit.name);
+      console.log(fruit.name, fruit.id);
     });
   }
 });
+
+// 📌 updata data
+
+Fruit.updateOne(
+  { _id: '61ae22e18d1359358fe86ea3' },
+  { name: 'blueberry' },
+  (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('Succesfully updated the document');
+    }
+  }
+);
