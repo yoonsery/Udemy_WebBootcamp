@@ -7,8 +7,15 @@ async function main() {
 }
 
 const fruitSchema = new mongoose.Schema({
-  name: String,
-  rating: Number,
+  name: {
+    type: String,
+    required: [true, 'Please check your data entry, no name specified!'],
+  },
+  rating: {
+    type: Number,
+    min: 1,
+    max: 10,
+  },
   review: String,
 });
 
@@ -21,23 +28,23 @@ const fruit = new Fruit({
   review: 'Delicious!',
 });
 
-const kiwi = new Fruit({
-  name: 'kiwi',
-  rating: 9,
-  review: 'Sweeeeet',
-});
+// const kiwi = new Fruit({
+//   name: 'kiwi',
+//   rating: 9,
+//   review: 'Sweeeeet',
+// });
 
-const peach = new Fruit({
-  name: 'peach',
-  rating: 10,
-  review: 'The best fruit',
-});
+// const peach = new Fruit({
+//   name: 'peach',
+//   rating: 10,
+//   review: 'The best fruit',
+// });
 
-const hallabong = new Fruit({
-  name: 'hallabong',
-  rating: 10,
-  review: 'Better than mandarin!',
-});
+// const hallabong = new Fruit({
+//   name: 'hallabong',
+//   rating: 10,
+//   review: 'Better than mandarin!',
+// });
 
 // fruit.save();
 
@@ -64,7 +71,7 @@ Fruit.find((err, fruits) => {
     console.log(err);
   } else {
     // 📌 close the connection
-    mongoose.connection.close();
+    // mongoose.connection.close();
 
     fruits.forEach((fruit) => {
       console.log(fruit.name);
