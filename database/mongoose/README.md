@@ -50,7 +50,7 @@ Fruit.insertMany([kiwi, peach, hallabong], (err) => {
 
 #### How to read from the database with Mongoose
 
-```
+```js
 Fruit.find((err, fruits) => {
   if (err) {
     console.log(err);
@@ -59,5 +59,22 @@ Fruit.find((err, fruits) => {
       console.log(fruit.name);
     });
   }
+});
+```
+
+#### Validation [👀](https://mongoosejs.com/docs/validation.html#built-in-validators)
+
+```js
+const fruitSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, 'Please check your data entry, no name specified!'], // optionally specify a message
+  }, // failsafe, when there's no name, console show us 2nd params message
+  rating: {
+    type: Number,
+    min: 1,
+    max: 10,
+  },
+  review: String,
 });
 ```
