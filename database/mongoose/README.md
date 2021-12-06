@@ -78,3 +78,43 @@ const fruitSchema = new mongoose.Schema({
   review: String,
 });
 ```
+
+#### How to update and delete data
+
+Update
+
+```js
+Fruit.updateOne(
+  { _id: '61ae22e18d1359358fe86ea3' },
+  { name: 'blueberry' },
+  (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('Succesfully updated the document');
+    }
+  }
+);
+```
+
+Delete
+
+```js
+// deleteOne
+Fruit.deleteOne({ name: 'blueberry' }, (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('Succesfully deleted!');
+  }
+});
+
+// deleteMany
+Person.deleteMany({ name: 'John' }, (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('Succesfully deleted all!');
+  }
+});
+```
