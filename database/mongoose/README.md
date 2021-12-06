@@ -47,3 +47,17 @@ Fruit.insertMany([kiwi, peach, hallabong], (err) => {
 ```
 
 #### example code [👀](https://github.com/yoonsery/study_node/tree/main/18-mongoose)
+
+#### How to read from the database with Mongoose
+
+```
+Fruit.find((err, fruits) => {
+  if (err) {
+    console.log(err);
+  } else {
+    fruits.forEach((fruit) => {
+      console.log(fruit.name);
+    });
+  }
+});
+```
