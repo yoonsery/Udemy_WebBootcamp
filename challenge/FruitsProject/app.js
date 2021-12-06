@@ -41,25 +41,33 @@ const hallabong = new Fruit({
 
 // fruit.save();
 
-Fruit.insertMany([kiwi, peach, hallabong], (err) => {
+// 📌 delete all documents from collection
+
+// Fruit.deleteMany((err) => {
+//   if (err) {
+//     console.log(err);
+//   }
+// });
+
+// 📌 insert documents to collection1
+
+// Fruit.insertMany([kiwi, peach, hallabong], (err) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log('Succesfully saved all the fruits to fruitsDB');
+//   }
+// });
+
+Fruit.find((err, fruits) => {
   if (err) {
     console.log(err);
   } else {
-    console.log('Succesfully saved all the fruits to fruitsDB');
+    // 📌 close the connection
+    mongoose.connection.close();
+
+    fruits.forEach((fruit) => {
+      console.log(fruit.name);
+    });
   }
 });
-
-// challenge
-
-const personSchema = new mongoose.Schema({
-  name: String,
-  age: Number,
-});
-
-const Person = mongoose.model('person', personSchema);
-const person = new Person({
-  name: 'John',
-  age: 37,
-});
-
-person.save();
