@@ -46,6 +46,14 @@ const hallabong = new Fruit({
   review: 'Better than mandarin!',
 });
 
+const mango = new Fruit({
+  name: 'mango',
+  rating: 9,
+  review: 'Nice colour and sweet',
+});
+
+// mango.save();
+
 // fruit.save();
 
 // 📌 delete all documents from collection
@@ -68,18 +76,18 @@ const hallabong = new Fruit({
 
 // 📌 read documents
 
-Fruit.find((err, fruits) => {
-  if (err) {
-    console.log(err);
-  } else {
-    // 📌 close the connection
-    // mongoose.connection.close();
+// Fruit.find((err, fruits) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     // 📌 close the connection
+//     // mongoose.connection.close();
 
-    fruits.forEach((fruit) => {
-      console.log(fruit.name, fruit.id);
-    });
-  }
-});
+//     fruits.forEach((fruit) => {
+//       console.log(fruit.name);
+//     });
+//   }
+// });
 
 // 📌 updata data
 
@@ -97,33 +105,51 @@ Fruit.find((err, fruits) => {
 
 // 📌 delete specific documents from the collection
 
-Fruit.deleteOne({ name: 'blueberry' }, (err) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log('Succesfully deleted!');
-  }
-});
+// Fruit.deleteOne({ name: 'blueberry' }, (err) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log('Succesfully deleted!');
+//   }
+// });
 
 // challenge
 
 const personSchema = new mongoose.Schema({
   name: String,
   age: Number,
+  favoriteFruit: fruitSchema,
 });
 
 const Person = mongoose.model('person', personSchema);
 const person = new Person({
-  name: 'John',
-  age: 37,
+  name: 'Amy',
+  age: 12,
+  favoriteFruit: kiwi,
 });
 
-person.save();
+// person.save();
 
-Person.deleteMany({ name: 'John' }, (err) => {
+Person.find((err, people) => {
   if (err) {
     console.log(err);
   } else {
-    console.log('Succesfully deleted all!');
+    people.forEach((person) => console.log(person));
+  }
+});
+
+// Person.deleteMany({ name: 'John' }, (err) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log('Succesfully deleted all!');
+//   }
+// });
+
+Person.updateOne({ name: 'John' }, { favoriteFruit: mango }, (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('Succesfully updated favourite fruit!');
   }
 });
