@@ -118,3 +118,28 @@ Person.deleteMany({ name: 'John' }, (err) => {
   }
 });
 ```
+
+#### How to establish relationships & embed documents
+
+```js
+const personSchema = new mongoose.Schema({
+  name: String,
+  age: Number,
+  favoriteFruit: fruitSchema, // It tells Mongoose that we are embedding a fruit document
+});
+
+// 활용 예시 1, 2
+const person = new Person({
+  name: 'Amy',
+  age: 12,
+  favoriteFruit: kiwi,
+});
+
+Person.updateOne({ name: 'John' }, { favoriteFruit: mango }, (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('Succesfully updated favourite fruit!');
+  }
+});
+```
