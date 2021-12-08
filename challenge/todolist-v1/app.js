@@ -42,7 +42,10 @@ const defaultItems = [welcome, item1, item2];
 // });
 
 app.get('/', (req, res) => {
-  res.render('list', { listTitle: 'Today', newListItems: items });
+  Item.find({}, (err, foundItems) => {
+    console.log(foundItems);
+    res.render('list', { listTitle: 'Today', newListItems: foundItems });
+  });
 });
 
 app.post('/', (req, res) => {
