@@ -83,17 +83,30 @@ app.get('/:customListName', (req, res) => {
 
 app.post('/', (req, res) => {
   const itemName = req.body.newItem;
-
-  if (itemName.trim() === '') {
-    res.redirect('/');
-    return;
-  }
+  const listName = req.body.list;
+  const trimmed = itemName.trim();
 
   const item = new Item({
     name: itemName,
   });
-  item.save();
-  res.redirect('/');
+
+  if (listName === 'Today') {
+    trimmed && item.save();
+    res.redirect('/');
+  } else {
+    if (!trimmed) {
+      res.redirect(`/${listName}`);
+      return;
+    }
+
+    List.updateOne(
+      { name: listName },
+      { $push: { items: item } },
+      (err, foundList) => {
+        res.redirect(`/${listName}`);
+      }
+    );
+  }
 });
 
 app.post('/delete', (req, res) => {
