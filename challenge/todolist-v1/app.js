@@ -51,19 +51,18 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-  const item = req.body.newItem;
+  const itemName = req.body.newItem;
 
-  if (item.trim() === '') {
+  if (itemName.trim() === '') {
+    res.redirect('/');
     return;
   }
 
-  if (req.body.list === 'Work List') {
-    workItems.push(item);
-    res.redirect('/work');
-  } else {
-    items.push(item);
-    res.redirect('/');
-  }
+  const item = new Item({
+    name: itemName,
+  });
+  item.save();
+  res.redirect('/');
 });
 
 app.get('/work', (req, res) => {
