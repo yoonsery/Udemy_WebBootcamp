@@ -33,6 +33,13 @@ const item2 = new Item({
 
 const defaultItems = [welcome, item1, item2];
 
+const listSchema = new mongoose.Schema({
+  name: String,
+  items: [itemsSchema],
+});
+
+const List = mongoose.model('list', listSchema);
+
 app.get('/', (req, res) => {
   Item.find({}, (err, foundItems) => {
     if (foundItems.length === 0) {
@@ -46,6 +53,30 @@ app.get('/', (req, res) => {
       });
     } else {
       res.render('list', { listTitle: 'Today', newListItems: foundItems });
+    }
+  });
+});
+
+app.get('/:customListName', (req, res) => {
+  const customListName = req.params.customListName;
+
+  List.findOne({ name: customListName }, (err, foundList) => {
+    if (!err) {
+      if (!foundList) {
+        // create a new list
+        const list = new List({
+          name: customListName,
+          items: defaultItems,
+        });
+        list.save();
+        res.redirect(`/${customListName}`);
+      } else {
+        // show existing list
+        res.render('list', {
+          listTitle: foundList.name,
+          newListItems: foundList.items,
+        });
+      }
     }
   });
 });
@@ -74,10 +105,6 @@ app.post('/delete', (req, res) => {
       res.redirect('/');
     }
   });
-});
-
-app.get('/work', (req, res) => {
-  res.render('list', { listTitle: 'Work List', newListItems: workItems });
 });
 
 app.get('/about', (req, res) => {
