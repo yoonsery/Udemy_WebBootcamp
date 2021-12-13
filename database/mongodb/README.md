@@ -75,3 +75,12 @@ db.products.insertOne(
 [docs](https://docs.mongodb.com/drivers/node/current/quick-start/)
 
 create a project directory ⟶ `npm init` ⟶ `npm i mongodb`
+
+## How to use mongodb atlas, clusters
+
+Sign up and make cluster then go to the `database access`, set the name and password  
+Also set `Atlas admin`from then Database User Privileges
+
+At network access, click the allow `access from anywhere`
+
+When Cluster is ready, click `connect`, `connect with mongoshell`
