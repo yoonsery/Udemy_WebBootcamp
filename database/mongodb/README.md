@@ -76,11 +76,32 @@ db.products.insertOne(
 
 create a project directory ⟶ `npm init` ⟶ `npm i mongodb`
 
-## How to use mongodb atlas, clusters
+## How to Setup MongoDB atlas
 
 Sign up and make cluster then go to the `database access`, set the name and password  
-Also set `Atlas admin`from then Database User Privileges
+Also set `Atlas admin`from the Database User Privileges
 
 At network access, click the allow `access from anywhere`
 
 When Cluster is ready, click `connect`, `connect with mongoshell`
+
+#### follow the instructions
+
+paste command line at the terminal `brew install mongosh` and  
+`mongosh "mongodb+srv://cluster0.puco5.mongodb.net/myFirstDatabase" --username <username>`
+
+Type in mongo commands  
+`show dbs`
+
+Create Database  
+Go to the collection section from cluster, create a new database  
+click `insert document` and set the database name, collection name
+
+Go to the Mongo shell  
+`show dbs`, `use <databaseName>`, `show collections`, `db.<collectionName>.find()`
+
+#### Connect to MongoDB cluster
+
+cluster > overview > `connect your application`  
+copy `mongodb+srv://<username>:<password>@cluster0.puco5.mongodb.net/<databaseName>`  
+go to the `app.js`, replace `mongoose.connect('mongodb://localhost:27017/<databaseName>` with 👆🏻
