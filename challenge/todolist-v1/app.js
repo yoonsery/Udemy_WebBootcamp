@@ -1,6 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const _ = require('lodash');
+const dotevn = require('dotenv');
+
+dotevn.config();
 
 const app = express();
 
@@ -9,7 +12,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 async function main() {
-  await mongoose.connect('mongodb://localhost:27017/todolistDB');
+  await mongoose.connect(
+    `mongodb+srv://${process.env.USER_NAME}:${process.env.PASSWORD}@cluster0.puco5.mongodb.net/todolistDB`
+  );
 }
 
 main().catch((err) => console.log(err));
