@@ -1,9 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const _ = require('lodash');
-const dotevn = require('dotenv');
+const dotenv = require('dotenv');
 
-dotevn.config();
+dotenv.config();
 
 const app = express();
 
@@ -11,13 +11,12 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-async function main() {
-  await mongoose.connect(
-    `mongodb+srv://${process.env.USER_NAME}:${process.env.PASSWORD}@cluster0.puco5.mongodb.net/todolistDB`
-  );
-}
-
-main().catch((err) => console.log(err));
+mongoose
+  .connect(
+    `mongodb+srv://${process.env.USER_NAME}:${process.env.PASSWORD}@cluster0.puco5.mongodb.net/todolistDB?retryWrites=true&w=majority`
+  )
+  .then(() => console.log(`MongoDB connected...`))
+  .catch((err) => console.log(err));
 
 const itemsSchema = new mongoose.Schema({
   name: String,
@@ -142,9 +141,6 @@ app.get('/about', (req, res) => {
 });
 
 let port = process.env.PORT;
-if (port == null || port == '') {
-  port = 3000;
-}
 
 app.listen(port, () => {
   console.log('Server has started successfully');
