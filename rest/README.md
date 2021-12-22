@@ -1,6 +1,6 @@
 ## What is REST?
 
-`RE`presentational `S`tate `T`ransger
+`RE`presentational `S`tate `T`ransfer
 
 - `client` makes a request to the `server`
 
