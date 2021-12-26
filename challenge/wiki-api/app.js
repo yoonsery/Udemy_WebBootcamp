@@ -66,16 +66,31 @@ app
     });
   });
 
+//  Individual Articles
+
 app
   .route('/articles/:articleTitle') //
   .get((req, res) => {
-    Article.findOne({ title: req.params.articleTitle }, (err, foundArticle) => {
-      if (foundArticle) {
-        res.send(foundArticle);
+    const articleTitle = req.params.articleTitle;
+    Article.findOne({ title: articleTitle }, (err, article) => {
+      if (article) {
+        res.send(article);
       } else {
         res.send(`No articles matching that title was found`);
       }
     });
+  })
+  .put((req, res) => {
+    const articleTitle = req.params.articleTitle;
+    Article.updateOne(
+      { title: articleTitle },
+      { title: req.body.title, content: req.body.content },
+      (err, article) => {
+        if (!err) {
+          res.send('Successfully updated article');
+        }
+      }
+    );
   });
 
 app.listen(3000, () => {
