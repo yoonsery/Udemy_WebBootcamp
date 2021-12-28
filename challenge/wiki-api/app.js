@@ -47,6 +47,7 @@ app
       title: req.body.title,
       content: req.body.content,
     });
+
     newArticle.save((err) => {
       if (!err) {
         res.send('Successfully added a new article');
@@ -72,6 +73,7 @@ app
   .route('/articles/:articleTitle') //
   .get((req, res) => {
     const articleTitle = req.params.articleTitle;
+
     Article.findOne({ title: articleTitle }, (err, article) => {
       if (article) {
         res.send(article);
@@ -82,10 +84,11 @@ app
   })
   .put((req, res) => {
     const articleTitle = req.params.articleTitle;
-    Article.updateOne(
+
+    Article.findOneAndUpdate(
       { title: articleTitle },
       { title: req.body.title, content: req.body.content },
-      (err, article) => {
+      (err) => {
         if (!err) {
           res.send('Successfully updated article');
         }
@@ -94,6 +97,7 @@ app
   })
   .patch((req, res) => {
     const articleTitle = req.params.articleTitle;
+
     Article.updateOne(
       //
       { title: articleTitle },
@@ -106,6 +110,17 @@ app
         }
       }
     );
+  })
+  .delete((req, res) => {
+    const articleTitle = req.params.articleTitle;
+
+    Article.deleteOne({ title: articleTitle }, (err) => {
+      if (!err) {
+        res.send('Successfully deleted the corresponding article');
+      } else {
+        res.send(err);
+      }
+    });
   });
 
 app.listen(3000, () => {
