@@ -91,6 +91,21 @@ app
         }
       }
     );
+  })
+  .patch((req, res) => {
+    const articleTitle = req.params.articleTitle;
+    Article.updateOne(
+      //
+      { title: articleTitle },
+      { $set: req.body },
+      (err) => {
+        if (!err) {
+          res.send('Successfully updated article');
+        } else {
+          res.send(err);
+        }
+      }
+    );
   });
 
 app.listen(3000, () => {
