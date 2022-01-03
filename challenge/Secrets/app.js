@@ -1,5 +1,6 @@
 const express = require('express');
 const ejs = require('ejs');
+const mongoose = require('mongoose');
 
 const app = express();
 
@@ -7,6 +8,22 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+async function connectDB() {
+  await mongoose.connect('mongodb://localhost:27017/userDB', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+}
+
+connectDB().catch((err) => console.log(err));
+
+const userSchema = new mongoose.Schema({
+  email: String,
+  password: String,
+});
+
+const User = mongoose.model('User', userSchema);
 
 app.get('/', (req, res) => {
   res.render('home');
