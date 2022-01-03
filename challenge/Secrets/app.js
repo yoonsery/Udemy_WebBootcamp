@@ -1,6 +1,10 @@
 const express = require('express');
 const ejs = require('ejs');
 const mongoose = require('mongoose');
+const encrypt = require('mongoose-encryption');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const app = express();
 
@@ -18,10 +22,14 @@ async function connectDB() {
 
 connectDB().catch((err) => console.log(err));
 
+const secret = process.env.ENCRYPT_KEY;
+
 const userSchema = new mongoose.Schema({
   email: String,
   password: String,
 });
+
+userSchema.plugin(encrypt, { secret, encryptedFields: ['password'] });
 
 const User = mongoose.model('User', userSchema);
 
