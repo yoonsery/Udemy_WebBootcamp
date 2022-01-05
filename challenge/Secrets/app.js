@@ -1,10 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const ejs = require('ejs');
 const mongoose = require('mongoose');
 const encrypt = require('mongoose-encryption');
-const dotenv = require('dotenv');
-
-dotenv.config();
 
 const app = express();
 
