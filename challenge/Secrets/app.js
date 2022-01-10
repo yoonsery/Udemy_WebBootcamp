@@ -27,7 +27,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 async function connectDB() {
-  await mongoose.connect('mongodb://localhost:27017/userDB', {
+  await mongoose.connect(process.env.DB_HOST, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
@@ -68,7 +68,6 @@ passport.use(
       callbackURL: 'http://localhost:3000/auth/google/secrets',
     },
     (accessToken, refreshToken, profile, cb) => {
-      // console.log(profile);
       User.findOrCreate({ googleId: profile.id }, (err, user) => {
         return cb(err, user);
       });
@@ -84,7 +83,6 @@ passport.use(
       callbackURL: 'http://localhost:3000/auth/facebook/secrets',
     },
     function (accessToken, refreshToken, profile, cb) {
-      // console.log(profile);
       User.findOrCreate({ facebookId: profile.id }, function (err, user) {
         return cb(err, user);
       });
@@ -115,7 +113,6 @@ app.get(
   '/auth/facebook/secrets',
   passport.authenticate('facebook', { failureRedirect: '/login' }),
   function (req, res) {
-    // Successful authentication, redirect home.
     res.redirect('/secrets');
   }
 );
@@ -213,6 +210,6 @@ app.post('/submit', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('Server started on port 3000');
+app.listen(process.env.PORT || 3000, () => {
+  console.log('Server has started successfully');
 });
