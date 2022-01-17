@@ -13,4 +13,5 @@
 - [JSX Code Practice](https://codesandbox.io/s/jsx-code-challenge-forked-v10wl)
 - [JavaScript Expressions in JSX & ES6 Template Literals](https://codesandbox.io/s/javascript-expressions-in-jsx-template-literals-forked-yrbum)
 - [JavaScript Expressions in JSX Practice](https://codesandbox.io/s/javascript-expressions-in-jsx-practice-forked-4fdku)
-- [JSX Attributes & Styling React Elements]()
+- [JSX Attributes & Styling React Elements](https://codesandbox.io/s/jsx-attributes-and-styling-forked-i404x)
+- [Inline Styling for React Elements](https://codesandbox.io/s/inline-styling-in-jsx-forked-g6hxl)
