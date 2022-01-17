@@ -15,3 +15,4 @@
 - [JavaScript Expressions in JSX Practice](https://codesandbox.io/s/javascript-expressions-in-jsx-practice-forked-4fdku)
 - [JSX Attributes & Styling React Elements](https://codesandbox.io/s/jsx-attributes-and-styling-forked-i404x)
 - [Inline Styling for React Elements](https://codesandbox.io/s/inline-styling-in-jsx-forked-g6hxl)
+- [React Styling Practice](https://codesandbox.io/s/react-styling-practice-forked-dfejn)
