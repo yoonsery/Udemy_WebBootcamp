@@ -24,6 +24,13 @@
 <details>
 <summary>React Components</summary>
 
+Components
+
 - [React Components](https://codesandbox.io/s/react-components-forked-3w82o)
 - [React Components Practice](https://codesandbox.io/s/react-components-practice-forked-fkv3u)
+
+ES6
+
+- [ES6 Import, Export & Modules](https://codesandbox.io/s/es6-import-export-modules-forked-i7vop?file=/src/index.js)
+
 </details>
