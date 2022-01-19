@@ -10,9 +10,20 @@
 
 ### Challenge in codesandbox
 
+<details>
+<summary>JSX Challenge</summary>
+
 - [JSX Code Practice](https://codesandbox.io/s/jsx-code-challenge-forked-v10wl)
 - [JavaScript Expressions in JSX & ES6 Template Literals](https://codesandbox.io/s/javascript-expressions-in-jsx-template-literals-forked-yrbum)
 - [JavaScript Expressions in JSX Practice](https://codesandbox.io/s/javascript-expressions-in-jsx-practice-forked-4fdku)
 - [JSX Attributes & Styling React Elements](https://codesandbox.io/s/jsx-attributes-and-styling-forked-i404x)
 - [Inline Styling for React Elements](https://codesandbox.io/s/inline-styling-in-jsx-forked-g6hxl)
 - [React Styling Practice](https://codesandbox.io/s/react-styling-practice-forked-dfejn)
+</details>
+
+<details>
+<summary>React Components</summary>
+
+- [React Components](https://codesandbox.io/s/react-components-forked-3w82o)
+- [React Components Practice](https://codesandbox.io/s/react-components-practice-forked-fkv3u)
+</details>
