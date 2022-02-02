@@ -37,5 +37,5 @@ ES6
 React Props
 
 - [React Props](https://codesandbox.io/s/react-props-forked-e5cbp)
-- [React Props Practice]()
+- [React Props Practice](https://codesandbox.io/s/react-props-practice-forked-l40qy)
 </details>
