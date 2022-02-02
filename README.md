@@ -38,4 +38,13 @@ React Props
 
 - [React Props](https://codesandbox.io/s/react-props-forked-e5cbp)
 - [React Props Practice](https://codesandbox.io/s/react-props-practice-forked-l40qy)
+
+React DevTools
+
+- [React DevTools](https://codesandbox.io/s/react-devtools-forked-ihflc)
+
+Mapping Data
+
+- [Mapping Data to Components](https://codesandbox.io/s/mapping-components-forked-5iihm)
+- [Mapping Data to Components Practice_emojipedia](https://codesandbox.io/s/mapping-components-practice-forked-jrd91)
 </details>
