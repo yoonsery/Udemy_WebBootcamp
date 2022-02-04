@@ -47,4 +47,10 @@ Mapping Data
 
 - [Mapping Data to Components](https://codesandbox.io/s/mapping-components-forked-5iihm)
 - [Mapping Data to Components Practice_emojipedia](https://codesandbox.io/s/mapping-components-practice-forked-jrd91)
+
+JS ES6
+
+- [Map, Filter, Reduce](https://codesandbox.io/s/map-filter-reduce-forked-hoj3s)
+- [Arrow Functions](https://codesandbox.io/s/es6-arrow-functions-forked-p6esq)
+
 </details>
