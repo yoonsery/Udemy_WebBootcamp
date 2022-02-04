@@ -52,5 +52,6 @@ JS ES6
 
 - [Map, Filter, Reduce](https://codesandbox.io/s/map-filter-reduce-forked-hoj3s)
 - [Arrow Functions](https://codesandbox.io/s/es6-arrow-functions-forked-p6esq)
-
+- [Conditional Rendering_Ternary Operator & AND Operator](https://codesandbox.io/s/conditional-rendering-forked-bski6)
+- [Conditional Rendering Practice](https://codesandbox.io/s/conditional-rendering-practice-forked-pwm3c)
 </details>
