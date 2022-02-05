@@ -54,4 +54,18 @@ JS ES6
 - [Arrow Functions](https://codesandbox.io/s/es6-arrow-functions-forked-p6esq)
 - [Conditional Rendering_Ternary Operator & AND Operator](https://codesandbox.io/s/conditional-rendering-forked-bski6)
 - [Conditional Rendering Practice](https://codesandbox.io/s/conditional-rendering-practice-forked-pwm3c)
+
+React Hooks
+
+- [React Hooks_useState](https://codesandbox.io/s/usestate-hook-forked-wi54w)
+- [React Hooks_useState Hook Practice](https://codesandbox.io/s/usestate-hook-practice-forked-pm7p7) & useEffect
+
+  ```js
+  // Because of the memory leak issue, I add useEffect
+  useEffect(() => {
+    const updateEverySeconds = setInterval(updateTime, 1000);
+    return () => clearInterval(updateEverySeconds);
+  }, []);
+  ```
+
 </details>
