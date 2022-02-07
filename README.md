@@ -68,4 +68,11 @@ React Hooks
   }, []);
   ```
 
+JS ES6 Destructuring
+
+- [Object & Array Destructuring](https://codesandbox.io/s/es6-destructuring-forked-8012t)
+
+Event Handling in React
+
+- [Event Handling](https://codesandbox.io/s/event-handling-in-react-forked-l9ixu)
 </details>
