@@ -94,4 +94,5 @@ Managing a Component Tree
 
 - [ToDoItem_Line Through](https://codesandbox.io/s/managing-a-component-tree-forked-82dbh)
 - [ToDoItem_Delete Item](https://codesandbox.io/s/managing-a-component-tree-delete-item-forked-64xq4)
+- [Managing a Component Tree Practice](https://codesandbox.io/s/managing-a-component-tree-practice-forked-hgvgl)
 </details>
