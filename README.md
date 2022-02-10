@@ -85,4 +85,13 @@ Changing Complex State
 - [Changing Complex State](https://codesandbox.io/s/changing-complex-state-forked-sr1p6)
 - [Changing Complex State Practice](https://codesandbox.io/s/changing-complex-state-practice-forked-ln2l7)
 
+JS ES6 Spread Operator
+
+- [Spread Operator](https://codesandbox.io/s/es6-spread-operator-forked-ytl8c)
+- [Spread Operator Practice](https://codesandbox.io/s/es6-spread-operator-practice-forked-y5pn6)
+
+Managing a Component Tree
+
+- [ToDoItem_Line Through](https://codesandbox.io/s/managing-a-component-tree-forked-82dbh)
+- [ToDoItem_Delete Item](https://codesandbox.io/s/managing-a-component-tree-delete-item-forked-64xq4)
 </details>
