@@ -1,12 +1,42 @@
-## Challenge Site
+I took [Web Development bootcamp course](https://www.udemy.com/course/the-complete-web-development-bootcamp) from Udemy to become a junior front-end developer. I tried to write every code before seeing the answer.
 
-- [ ] Simon game (JS deploy)
-- [ ] calculator (add Css?)
-- [ ] ejs-challenge (blog)
-- [x] [Newletter Signup](https://sery-newsletter-signup.herokuapp.com/)
-- [x] [To do List](https://sery-todolist.herokuapp.com/)
-- [ ] [wiki-api](포스트맨으로 실습~)
-- [x] [Secrets](https://sery-secrets.herokuapp.com/)
+## Challenge project with demo
+
+### ejs-challenge (blog)
+
+<hr>
+
+### [Newletter Signup](https://sery-newsletter-signup.herokuapp.com/)
+
+<hr>
+
+### [To do List](https://sery-todolist.herokuapp.com/)
+
+<hr>
+
+### [Secrets 👀](https://sery-secrets.herokuapp.com/)
+
+![demo_secrets](https://user-images.githubusercontent.com/69155242/159277358-a6aab6dd-fc17-4d54-a108-40816884a7b0.gif)
+
+#### What I Learn
+
+Authentication & Security
+
+- Understand the need for authentication and keeping user
+  details secure.
+- Learn about Encryption and use encryption to keep your
+  database secure.
+- Learn and implement Hashing and Salting with bcrypt.
+- Using Sessions and Cookies to persist user log in sessions.
+- Setting up local authentication from scratch.
+- Implementing Passport to authenticate users quickly and
+  effectively.
+- Understand and use environment variables to keep secret keys
+  secure.
+- Understand and use OAuth 2.0 to log in users using Google and
+  Facebook.
+
+<hr>
 
 ### Challenge in codesandbox
 
@@ -88,11 +118,17 @@ Changing Complex State
 JS ES6 Spread Operator
 
 - [Spread Operator](https://codesandbox.io/s/es6-spread-operator-forked-ytl8c)
-- [Spread Operator Practice](https://codesandbox.io/s/es6-spread-operator-practice-forked-y5pn6)
+- [Spread Operator Practice](https://codesandbox.io/s/es6-spread-operator-practice-forked-fuwp7)
 
 Managing a Component Tree
 
 - [ToDoItem_Line Through](https://codesandbox.io/s/managing-a-component-tree-forked-82dbh)
 - [ToDoItem_Delete Item](https://codesandbox.io/s/managing-a-component-tree-delete-item-forked-64xq4)
 - [Managing a Component Tree Practice](https://codesandbox.io/s/managing-a-component-tree-practice-forked-hgvgl)
+
+Keeper App
+
+- [Keeper App](https://codesandbox.io/s/using-pre-built-react-components-forked-76r0n)
 </details>
+
+![Bootcamp_Certificate](Bootcamp_Certificate.jpeg)
