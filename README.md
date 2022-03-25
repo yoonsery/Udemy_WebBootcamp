@@ -2,11 +2,9 @@ I took [Web Development bootcamp course](https://www.udemy.com/course/the-comple
 
 ## Challenge project with demo
 
-### ejs-challenge (blog)
-
-<hr>
-
 ### [Newletter Signup 👀](https://sery-newsletter-signup.herokuapp.com/)
+
+![demo_newsletter](https://user-images.githubusercontent.com/69155242/160133290-674f92a8-21e4-47fa-bf42-c7ca7c591c1e.gif)
 
 <hr>
 
