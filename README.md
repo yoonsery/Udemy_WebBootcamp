@@ -1,4 +1,4 @@
-I took [Web Development bootcamp course](https://www.udemy.com/course/the-complete-web-development-bootcamp) from Udemy to become a junior front-end developer. I tried to write every code before seeing the answer.
+I took [Web Development bootcamp course](https://www.udemy.com/course/the-complete-web-development-bootcamp) from Udemy to become a junior front-end developer. I tried to write every code by myself before seeing explanation.
 
 ## Challenge project with demo
 
@@ -26,7 +26,7 @@ I took [Web Development bootcamp course](https://www.udemy.com/course/the-comple
 <summary>Node</summary>
 
 - Explore the components of back-end development, working with an MVC framework
-- Apply concepts like data types, objects, methods, objectoriented programming, and classes in the context of backend development.
+- Apply concepts like data types, objects, methods, objectoriented programming, and classes in the context of backend development
 - Server-Side JavaScript
 - Using Node on the command line
 - NPM
@@ -51,13 +51,13 @@ I took [Web Development bootcamp course](https://www.udemy.com/course/the-comple
 <details>
 <summary>APIs</summary>
 
-- Understand what APIs are and how they work.
+- Understand what APIs are and how they work
 - HTTP in Depth
 - Calling APIs
 - Reading API documentation
 - Basic API Authentication
 - Server to server communication
-- JSON vs. XML, sending data over the wire.
+- JSON vs. XML, sending data over the wire
 
 </details>
 
@@ -65,7 +65,7 @@ I took [Web Development bootcamp course](https://www.udemy.com/course/the-comple
 <summary>EJS</summary>
 
 - Understand what EJS does and how to use it with Node and
-  Express.
+  Express
 - Templating with EJS
 - Running code in EJS templates
 - Passing data from server to template and vice versa
@@ -93,25 +93,25 @@ I took [Web Development bootcamp course](https://www.udemy.com/course/the-comple
 - Installing MongoDB
 - Mapping relationships with MongoDB
 - Using an object-data modelling library (Mongoose) to work
-- easily with your data.
+- easily with your data
 </details>
 
 <details>
 <summary>Deployment</summary>
 
-- Understand hosting and deployment.
-- Deploying server based applications with Heroku.
-- Deploying Databases with Mongo Atlas.
+- Understand hosting and deployment
+- Deploying server based applications with Heroku
+- Deploying Databases with Mongo Atlas
 
 </details>
 
 <details>
 <summary>Building RESTful APIs</summary>
 
-- Understand REST and guiding principles behind API design.
+- Understand REST and guiding principles behind API design
 - Learn to work with a MongoDB GUI Robo 3T
-- Implementing GET, POST, PUT, PATCH and DELETE by creating a public API from scratch.
-- Understand and use chained route handlers from Express.
+- Implementing GET, POST, PUT, PATCH and DELETE by creating a public API from scratch
+- Understand and use chained route handlers from Express
 
 </details>
 
@@ -119,26 +119,25 @@ I took [Web Development bootcamp course](https://www.udemy.com/course/the-comple
 <summary>Authentication & Security</summary>
 
 - Understand the need for authentication and keeping user
-  details secure.
+  details secure
 - Learn about Encryption and use encryption to keep your
-  database secure.
-- Learn and implement Hashing and Salting with bcrypt.
-- Using Sessions and Cookies to persist user log in sessions.
-- Setting up local authentication from scratch.
+  database secure
+- Learn and implement Hashing and Salting with bcrypt
+- Using Sessions and Cookies to persist user log in sessions
+- Setting up local authentication from scratch
 - Implementing Passport to authenticate users quickly and
-  effectively.
+  effectively
 - Understand and use environment variables to keep secret keys
-  secure.
+  secure
 - Understand and use OAuth 2.0 to log in users using Google and
-Facebook.
+Facebook
 </details>
 
 <hr>
 
-### Small React Challenges in codesandbox
+## Small React Challenges in codesandbox
 
-<details>
-<summary>JSX Challenge</summary>
+### JSX Challenge
 
 - [JSX Code Practice](https://codesandbox.io/s/jsx-code-challenge-forked-v10wl)
 - [JavaScript Expressions in JSX & ES6 Template Literals](https://codesandbox.io/s/javascript-expressions-in-jsx-template-literals-forked-yrbum)
@@ -146,10 +145,8 @@ Facebook.
 - [JSX Attributes & Styling React Elements](https://codesandbox.io/s/jsx-attributes-and-styling-forked-i404x)
 - [Inline Styling for React Elements](https://codesandbox.io/s/inline-styling-in-jsx-forked-g6hxl)
 - [React Styling Practice](https://codesandbox.io/s/react-styling-practice-forked-dfejn)
-</details>
 
-<details>
-<summary>React Components</summary>
+### React Components
 
 Components
 
@@ -226,6 +223,5 @@ Managing a Component Tree
 Keeper App
 
 - [Keeper App](https://codesandbox.io/s/using-pre-built-react-components-forked-76r0n)
-</details>
 
 ![Bootcamp_Certificate](Bootcamp_Certificate.jpeg)
